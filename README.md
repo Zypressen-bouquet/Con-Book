@@ -1,33 +1,24 @@
-<アプリ名>
-こんぶっくす
-サイト概要
+# README
 
-サイトテーマ
-投稿小説専門感想投稿サイト
+This README would normally document whatever steps are necessary to get the
+application up and running.
 
-テーマを選んだ理由
-　自身の趣味として、投稿小説の読み漁りがあるのですが、
-その趣味を共有できる何かというのが今までだとTwitterなどで
-自身の感想を呟くしかなく検索もしにくいというのがあったので、
-それなら自身でそういった物を作りたいと思ったため。
+Things you may want to cover:
 
-ターゲットユーザ
-　投稿小説を日頃から読んでいる人
-　面白い小説を読みたい人
-　投稿小説を読んだことのないが興味のある人人
+* Ruby version
 
-主な利用シーン
-　面白い小説を見つけたいとき
-　小説の感想を誰かと共有したいとき
-　自分の投稿した小説を知ってもらいたいとき
+* System dependencies
 
-設計書
-　ユーザー登録をした人のみ感想の投稿やコメントを使える
-　管理者はユーザーの不適切な投稿や誹謗中傷をするユーザーをログインできなくしたり投稿削除できるように
-　イラスト投稿機能などもつける
-　お気に入りユーザーや投稿にいいね機能をつけられる
-　投稿小説のジャンル検索をできるように
-　小説名からの検索
+* Configuration
 
-### 機能一覧
-https://docs.google.com/spreadsheets/d/1vYjfVDAtaE9agrqDi9vf-vZXDy1bXpNvkOa-knYHJ8k/edit?usp=sharing
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
