@@ -1,0 +1,18 @@
+
+<div class="container-fluid", style="background-color: #00FF99">
+	<div class="container">
+	  <div class="navbar header">
+	    <%= link_to 'こんぶっくす', root_path %>
+	  </div>
+
+
+	      <ul class="nav navbar-nav navbar-right">
+
+	      <%= link_to "ログイン" ,new_user_session_path,class:"glyphicon glyphicon-log-in sign_in" %>
+
+	      <%= link_to "ログイン(管理者)" ,new_admin_session_path,class:"glyphicon glyphicon-log-in sign_in"  %>
+
+	      <%= link_to "ユーザ登録",new_user_registration_path,class:"glyphicon glyphicon-edit sign_up" %>
+	      </ul>
+  </div>
+</div>

@@ -1,0 +1,19 @@
+<div class="container">
+    <% if flash[:message] %>
+    <div>
+        <%= flash[:message] %>
+    </div>
+    <% end %>
+    <div class="row">
+        <div class="top-message col-md-offset-3 col-md-6 center">
+            <h1>ようこそこんぶっくすへ!!</h1>
+            <p>こんぶっくすとは、投稿小説専門の感想投稿サイトです。</span>
+            <p>いつも読んでいて面白いと思っている小説を紹介したい。</p>
+            <p>最近面白い小説が見つからない。</p>
+            <p>投稿小説を読んでみたいけどどれを読んだらいいのかわからない。</p>
+            <p>そんな思いを抱いているあなたへオススメします！</p>
+            <p><%= link_to "ユーザーログイン" , new_user_session_path,class:"btn btn-info col-xs-10 col-xs-offset-1 sign_in" %></p>
+            <p><%= link_to "登録されていない方はこちらから", new_user_registration_path,class:"btn btn-success col-xs-10 col-xs-offset-1 sign_up" %><p/>
+        </div>
+    </div>
+</div>

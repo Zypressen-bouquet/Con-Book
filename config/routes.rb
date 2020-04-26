@@ -1,12 +1,18 @@
 Rails.application.routes.draw do
-
+  root 'homes#top'
   devise_for :admins, controllers: {
   sessions: 'admins/sessions'
   }
   devise_for :users
 
 
-  resources :books, only: [:index,:show]
+  resources :books do
+    # いいね機能
+    resource :favorites, only: [:create, :destroy]
+    # コメント機能 resources 複数コメントをid判別している
+    resources :book_comments, only: [:create, :destroy]
+  end
+
   resources :genres, only: [:index] do
     resources :books, only: [:index]
   end
@@ -24,13 +30,10 @@ Rails.application.routes.draw do
   namespace :admin do
     get 'homes/top' => 'homes#top'
     resources :genres, only: [:index,:edit,:create,:update]
-    resources :orders, only: [:index,:show,:update]
-    resources :ordered_products, only: [:update]
-    resources :products, only: [:index,:new,:create,:show,:edit,:update]
+    resources :books, only: [:index,:show,:update,:destroy]
     resources :users, only: [:index,:show,:edit,:update]
   end
 
 end
 
 
-end

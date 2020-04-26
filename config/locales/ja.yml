@@ -1,0 +1,32 @@
+ja:
+  hello: "こんにちは"
+  enums:
+    genre:
+      display_status:
+        "true": "有効"
+        "false": "無効"
+
+
+  activerecord:
+    models:
+      user: "ユーザー"
+      admin: "管理者"
+      cart: "カート"
+      delivery: "配送先"
+      product: "プロダクト"
+      genre: "ジャンル"
+      order: "注文情報"
+      ordered_product: "注文詳細情報"
+    attributes:
+      user:
+        name: "ハンドルネーム"
+        email: "メールアドレス"
+        status: "ユーザ状態ステータス"
+        password: "パスワード"
+      admin:
+        email: "メールアドレス"
+        password: "パスワード"
+      genre:
+        genre: "ジャンル"
+        display_status: "表示ステータス"
+

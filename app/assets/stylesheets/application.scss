@@ -13,3 +13,32 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FFFFF0;
+}
+
+a {
+    color: #555500;
+    text-decoration: underline;
+}
+
+
+
+// フッター最下部固定
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+footer {
+  margin-top: auto;
+}

@@ -70,3 +70,8 @@ gem 'rspec-rails'
 gem 'pry-byebug'
 gem 'pry-rails'
 gem 'kaminari','~> 1.1.1'
+gem 'rails-i18n', '~> 5.1' 
+gem 'devise-i18n'
+
+
+
