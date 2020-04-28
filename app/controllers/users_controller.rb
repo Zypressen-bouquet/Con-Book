@@ -1,26 +1,10 @@
 class UsersController < ApplicationController
     before_action :authenticate_user!
 
-    def quit
-
-    end
-
-    def user_quit
-        @user = current_user
-        if @user.update(status: false)
-        #ログアウトさせる
-        reset_session
-        flash[:notice] = "ありがとうございました。またのご利用を心よりお待ちしております。"
-        end
-        redirect_to root_path
-    end
-
-
-
     def update
         @user = current_user
         if @user.update(user_params)
-            redirect_to user_path(current_user.id)
+            redirect_to user_path(@user.id)
         else
             render "edit"
         end
@@ -36,8 +20,7 @@ class UsersController < ApplicationController
 
     private
         def user_params
-            params.require(:user).permit(:name, :email, :status)
+            params.require(:user).permit(:name, :email, :status, :profile_image)
         end
 
 end
-

@@ -1,0 +1,21 @@
+<%= form_for(@book) do |f| %>
+	<div class="field row">
+		<%= f.label :title %>
+		<%= f.text_field :title, class: "col-xs-12 book_title" %>
+	</div>
+
+	<div class="field row">
+		<%= f.label :body %> <!-- ここを変更 -->
+		<%= f.text_area :body, class: "form-control" %>
+	</div>
+
+	<div class="field row">
+        <%= f.label :genre_id, "ジャンル"%>
+            <%= f.collection_select :genre_id, Genre.all, :id,:genre,class: "form-control" %>
+
+    </div>
+
+	<div class="actions row">
+		<%= f.submit class: "btn btn-primary col-xs-12" %>
+	</div>
+<% end %> 

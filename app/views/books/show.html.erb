@@ -1,0 +1,114 @@
+<div class="container">
+  <div class="row">
+  	<div class="col-xs-2">
+
+
+
+    </div>
+			<div class="col-xs-10">
+    		<h2>投稿詳細</h2>
+    		<table class="table">
+  					<thead>
+    					<tr>
+      					<th>ユーザーネーム</th>
+      					<th>タイトル</th>
+                <th>ジャンル</th>
+      					<th>感想</th>
+      					<th colspan="3"></th>
+    					</tr>
+  					</thead>
+  				  <tbody>
+  					  <tr>
+  							<td>
+  								<%= attachment_image_tag @book.user, :profile_image, :fill, 60, 60, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg" %>
+  			          <%= @user.name %>
+                </td>
+  							<td>
+  								<%= @book.title %>
+  							</td>
+
+                <td>
+                  <%= @book.genre.genre %>
+                </td>
+
+  							<td>
+                  <%= @book.body %>
+                </td>
+
+                <td>
+                </td>
+                <!-- いいね機能　-->
+                <% if @book.favorited_by?(current_user) %>
+                  <td>
+                    <%= link_to book_book_favorites_path(@book), method: :delete do %>
+                    <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
+                    <%= @book.book_favorites.count %> いいね
+                    <% end %>
+                  </td>
+                <% else %>
+                  <td>
+                    <%= link_to book_book_favorites_path(@book), method: :post do %>
+                      <i class="fa fa-heart" aria-hidden="true"></i>
+                      <%= @book.book_favorites.count %> いいね
+                      <% end %>
+                  </td>
+                <% end %>
+
+                <!-- 下記、コメント件数 -->
+                <td>
+                  <%= @book.book_comments.count %>件コメント
+                </td>
+                <% if @book.user == current_user %>
+    							<td>
+                    <%= link_to "編集", edit_book_path %>
+                  </td>
+    							<td>
+                    <%= link_to "投稿削除", book_path(@book), method: :delete, data: {confirm: "本当によろしいですか？"} %>
+                  </td>
+  							<% end %>
+  					  </tr>
+  				  </tbody>
+				</table>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>日時</th>
+              <th>ユーザーID 名前</th>
+              <th>コメント</th>
+            </tr>
+          </thead>
+          <% @book.book_comments.each do |book_comment| %>
+          <tbody>
+            <td>
+              <%= book_comment.created_at.strftime("%Y年%m月%d日 %H時%M分") %>
+            </td>
+            <td>
+              <%= book_comment.user_id %> <%= @user.name %>
+            </td>
+            <td>
+              <%= book_comment.comment %>
+            </td>
+          <% if book_comment.user_id == current_user.id %>
+            <td>
+              <!-- 削除 -->
+               <%= link_to "コメント削除", book_book_comment_path(book_comment.book_id, book_comment.id), method: :delete %>
+            </td>
+          <% end %>
+          </tbody>
+          <% end %>
+        </table>
+        <!-- 下記　コメント機能 -->
+        <table>
+              <%= form_for [@book, @book_comment] do |f| %>
+              <%= f.text_area :comment, rows:'5', class: "form-control",placeholder: "コメントをここに" %>
+              <%= f.submit "送信する", class: "btn btn-primary mt-20 pull-right" %>
+              <% end %>
+        </table>
+
+      </div>
+  </div>
+</div>
+  		</div>
+	</div>
+</div>
+

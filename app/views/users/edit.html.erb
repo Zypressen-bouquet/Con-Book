@@ -1,0 +1,52 @@
+<div class="container">
+        <div class="row">
+            <div class="col-xs-offset-2">
+                <h3 class="under-border">会員情報編集</h3>
+            </div>
+        </div>
+   <div class="row">
+        <div class="col-xs-offset-2 col-xs-8">
+          <%= form_for(@user) do |f|%>
+            <%= render "devise/shared/error_messages", resource: @user %>
+                <div class="col-xs-2">
+                    <div>
+                        <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg"%>
+                    </div>
+                </div>
+          <div class="form-group row">
+
+
+                <div class="col-xs-9">
+                        <%= f.attachment_field :profile_image, placeholder: "プロフィール画像" %>
+                </div>
+
+                <div class="col-xs-3">
+                    <label>ハンドルネーム</label>
+                </div>
+                  
+                <div class="col-xs-5">
+                    <%= f.text_field :name, placeholder:"ハンドルネーム", class: "form-control" %>
+                </div>
+  
+
+            <div class="form-group row">
+                <div class="col-xs-3">
+                    <label>メールアドレス</label>
+                </div>
+                <div class="col-xs-5">
+                    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder:"例）aaaaaa@mail.com", class: "form-control offset-1 col-11" %>
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <div class="col-xs-4 col-xs-offset-4">
+                    <%= f.submit "編集内容を保存する", class: "btn btn-primary" %>
+                </div>
+
+            </div>
+            <% end %>
+          </div>
+        </div>
+    </div>
+</div>

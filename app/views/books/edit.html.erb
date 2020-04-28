@@ -1,0 +1,43 @@
+
+<div class="container">
+
+  <div class="row">
+	  <div class="col-md-6 col-md-offset-3">
+  		<h1 class="under-line">投稿編集</h1>
+
+      <%= form_for(@book) do |f| %>
+
+
+      <div class="field row">
+        <h4>タイトル</h4>
+         <div><%= f.text_field :title, class: "col-xs-12 book_title" %></div>
+      </div>
+
+      <div class="field row">
+        <h4>感想</h4>
+        <div>
+          <%= f.text_area :body, class: "col-xs-12 book_body" %>
+        </div>
+      </div>
+
+        <div class="field row">
+        <%= f.label :genre_id, "ジャンル"%>
+            <%= f.collection_select :genre_id, Genre.all, :id,:genre,class: "col-xs-12 book_body" %>
+
+    </div>
+
+      <div class="actions row">
+          <div>
+            <%= f.submit "更新する", class: "btn btn-success col-xs-12" %>
+            </div>
+        <% end %>
+
+          <div>
+            <%= link_to "Show", book_path(@book.id) %>
+            <%= link_to "Back", books_path %>
+          </div>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+  </div>
+</div>

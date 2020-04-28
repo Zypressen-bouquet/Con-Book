@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :books do
     # いいね機能
-    resource :favorites, only: [:create, :destroy]
+    resource :book_favorites, only: [:create, :destroy]
     # コメント機能 resources 複数コメントをid判別している
     resources :book_comments, only: [:create, :destroy]
   end
@@ -17,14 +17,7 @@ Rails.application.routes.draw do
     resources :books, only: [:index]
   end
 
-
-  resources :users, only: [:show,:edit,:update] do
-    member do
-      get 'quit'
-      put 'user_quit'
-    end
-  end
-
+  resources :users, only: [:show,:edit,:update,:destroy]
 
   # Adminのrouting
   namespace :admin do

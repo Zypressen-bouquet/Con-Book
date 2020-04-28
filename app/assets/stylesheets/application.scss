@@ -23,7 +23,7 @@
 }
 
 body {
-    background-color: #FFFFF0;
+    background-color: #E6FFE9;
 }
 
 a {
@@ -41,4 +41,16 @@ body{
 }
 footer {
   margin-top: auto;
+}
+
+
+.under-border{
+  text-decoration : underline;
+  text-decoration-color: #00FF99;
+  border-width: 1px;
+
+}
+
+list-group{
+  margin-top: 10px;
 }

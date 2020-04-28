@@ -1,0 +1,15 @@
+<div class="row">
+	<ul class="list-group">
+	  <li class="list-group-item list-group-item-success text-center">ジャンル検索</li>
+	  <li class="list-group-item text-center">
+	  	<%= link_to "すべて表示", books_path %>
+	    <% genres.each do |genre| %>
+	  	    <div class="genru-text">
+				<%= link_to genre.genre, genre_books_path(genre) %>
+		  	</div>
+		  	<% end %>
+
+	　　</li>
+	  
+	</ul>
+</div>
