@@ -35,7 +35,7 @@
     						<tr>
     							<td>
     								<%= attachment_image_tag book.user, :profile_image, :fill, 60, 60, class: "img-circle pull-left profile-thumb", fallback: "no_image.jpg" %>
-                    <%= @user.name %>
+                    <%= @users.name %>
                   </td>
     							<td>
     								<%= link_to book_path(book.id) do %>
@@ -45,13 +45,12 @@
     							<td>
                     <%= book.body .truncate(20) %>
                   </td>
-                  <!-- 下記　いいね機能。eachの変数|book|を用いる-->
 
                     <!-- 下記、コメント -->
                     <td>
                       <%= book.book_comments.count %>件コメント
                     </td>
-    							
+
     						</tr>
               <% end %>
   					</tbody>

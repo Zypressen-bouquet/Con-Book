@@ -10,7 +10,7 @@ class BooksController < ApplicationController
             @books = Book.all
             # binding.pry
           end
-        @user = User.find(current_user.id)
+        @users = User.find(current_user.id)
         @book = Book.new
 
     end

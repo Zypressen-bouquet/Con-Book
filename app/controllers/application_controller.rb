@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
       when Admin
         admin_homes_top_path
       when User
-        root_path
+        books_path
       end
     end
 
